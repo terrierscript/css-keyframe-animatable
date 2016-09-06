@@ -76,12 +76,22 @@ describe('css @keyframes', () => {
     ]
     assert.deepEqual(cssKeyframesToArray(input), expect)
   })
-  it('return null when invalid input', () => {
-    const input = {
-      '0%': { top: 0, left: 0 },
-      'red': { top: '100px', left: '100%' },
-      '100%': { top: '100px', left: '100%' }
-    }
-    assert.deepEqual(cssKeyframesToArray(input), null)
+  describe('return null', () => {
+    it('when invalid input', () => {
+      const input = {
+        '0%': { top: 0, left: 0 },
+        'red': { top: '100px', left: '100%' },
+        '100%': { top: '100px', left: '100%' }
+      }
+      assert.deepEqual(cssKeyframesToArray(input), null)
+    })
+    it('when over 100', () => {
+      const input = {
+        '0%': { top: 0, left: 0 },
+        'red': { top: '100px', left: '100%' },
+        '106%': { top: '100px', left: '100%' }
+      }
+      assert.deepEqual(cssKeyframesToArray(input), null)
+    })
   })
 })

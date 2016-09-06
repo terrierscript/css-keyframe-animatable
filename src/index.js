@@ -2,7 +2,6 @@ const keyReplace = require('key-replace')
 const parsePercentage = require('./parse-percentage')
 // https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
 
-
 const toPercentage = (value) => {
   switch (value) {
     case 'from': return 0
@@ -28,7 +27,7 @@ const convertPercentages = (keyframes) => {
 }
 
 const isValidValue = (num) => {
-  return ( !isNaN(num) && num >= 0 && num <= 100)
+  return (!isNaN(num) && num >= 0 && num <= 100)
 }
 
 const isValid = (arr) => {
@@ -37,16 +36,15 @@ const isValid = (arr) => {
   })
 }
 
-
 const finalize = (keyframeArray) => {
-  return keyframeArray.map( ({ percentage, value }) => {
+  return keyframeArray.map(({ percentage, value }) => {
     const offsetValue = {
       offset: percentage / 100
     }
     const re = /animation-timing-function|animationTimingFunction/
     const replacedValue = keyReplace(value, re, 'easing')
     return Object.assign({}, replacedValue, offsetValue)
-  } )
+  })
 }
 
 const convertCssKeyframe = (keyframes) => {

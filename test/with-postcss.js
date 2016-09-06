@@ -5,13 +5,13 @@ const assert = require('assert')
 
 describe('with postcss', () => {
   it('convert raw css string', () => {
-    let css  = `
+    let css = `
     @keyframes identifier {
       from { top: 0; left: 0; }
       to { top: 100px; left: 100%; }
     }
     `
-    const obj = postcssJs.objectify( postcss.parse(css) )
+    const obj = postcssJs.objectify(postcss.parse(css))
     const result = cssKeyframesToArray(obj['@keyframes identifier'])
     const expect = [
       { top: '0', left: '0', offset: 0 },

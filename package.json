@@ -8,10 +8,14 @@
     "prepublish": "npm run build",
     "preversion": "npm run build",
     "build": "babel src --out-dir lib",
+    "lint": "eslint src/ test/",
     "coverage": "nyc npm test",
     "test": "npm run build; mocha"
   },
-  "keywords": ["css", "keyframe"],
+  "keywords": [
+    "css",
+    "keyframe"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/inuscript/css-keyframe-animatable"
@@ -23,6 +27,10 @@
     "babel-cli": "^6.14.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-latest": "^6.14.0",
+    "eslint": "^3.4.0",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
     "mocha": "^3.0.2",
     "nyc": "^8.1.0",
     "postcss": "^5.1.2",

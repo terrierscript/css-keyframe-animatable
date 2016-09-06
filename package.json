@@ -12,6 +12,10 @@
     "coverage": "nyc npm test",
     "test": "npm run build; mocha"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "keywords": [
     "css",
     "keyframe"

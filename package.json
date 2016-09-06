@@ -42,6 +42,7 @@
     "rimraf": "^2.5.4"
   },
   "dependencies": {
+    "babel-runtime": "^6.11.6",
     "key-replace": "^1.0.0"
   }
 }

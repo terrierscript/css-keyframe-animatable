@@ -1,5 +1,5 @@
 {
-  "name": "css-keyframe-to-array",
+  "name": "css-keyframe-animatable",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,11 @@
     "coverage": "nyc npm test",
     "test": "npm run build; mocha"
   },
-  "keywords": [],
+  "keywords": ["css", "keyframe"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inuscript/css-keyframe-animatable"
+  },
   "author": "inuscript <inuscript@gmail.com>",
   "license": "MIT",
   "devDependencies": {

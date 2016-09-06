@@ -1,5 +1,9 @@
 # css-keyframe-to-array
 
+[![npm](https://img.shields.io/npm/v/css-keyframe-animatable.svg)](https://www.npmjs.com/package/css-keyframe-animatable)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Build Status](https://travis-ci.org/inuscript/css-keyframe-animatable.svg?branch=master)](https://travis-ci.org/inuscript/css-keyframe-animatable)
+
 ```js
 const cssKeyframesToArray = require('css-keyframe-to-array')
 

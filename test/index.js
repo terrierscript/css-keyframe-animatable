@@ -62,12 +62,14 @@ describe('css @keyframes', () => {
   it('With numeric', () => {
     const input = {
       0: { top: 0, left: 0 },
+      .5: { left: '10px' },
       30: { top: '50px' },
       52.2: { top: '55px' },
       '100%': { top: '100px', left: '100%' }
     }
     const expect = [
       { top: 0, left: 0, offset: 0 },
+      { left: '10px', offset: 0.005 },
       { top: '50px', offset: 0.3 },
       { top: '55px', offset: 0.522 },
       { top: '100px', left: '100%', offset: 1 }

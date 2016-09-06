@@ -1,7 +1,9 @@
 const keyReplace = require('key-replace')
-const parsePercentage = require('./parse-percentage')
 // https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
 
+const parsePercentage = (value) => {
+  return Number.parseFloat(value)
+}
 const toPercentage = (value) => {
   switch (value) {
     case 'from': return 0

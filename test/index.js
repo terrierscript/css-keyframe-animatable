@@ -7,13 +7,10 @@ describe('css @keyframes', () => {
       from: { marginTop: '50px' },
       to: { marginTop: '100px' }
     }
-    const expect = [{
-      marginTop: '50px',
-      offset: 0
-    }, {
-      marginTop: '100px',
-      offset: 1
-    }]
+    const expect = [
+      { marginTop: '50px', offset: 0 },
+      { marginTop: '100px', offset: 1 }
+    ]
 
     assert.deepEqual(cssKeyframesToArray(input), expect)
   })
@@ -49,4 +46,17 @@ describe('css @keyframes', () => {
     ]
     assert.deepEqual(cssKeyframesToArray(input), expect)
   })
+  it('Convert animationTimingFunction ', () => {
+    const input = {
+      from: { marginTop: '50px', 'animation-timing-function': 'ease-in' },
+      to: { marginTop: '100px', 'animationTimingFunction': 'ease-out' }
+    }
+    const expect = [
+      { marginTop: '50px', offset: 0, easing: 'ease-in' },
+      { marginTop: '100px', offset: 1, easing: 'ease-out'}
+    ]
+
+    assert.deepEqual(cssKeyframesToArray(input), expect)
+  })
+
 })

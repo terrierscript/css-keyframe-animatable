@@ -34,6 +34,7 @@ describe('css @keyframes', () => {
     const input = {
       '0% ': { top: 0, left: 0 },
       '30%, 31%,32%': { top: '50px' },
+      '51.2%': { top: '55px' },
       '100%': { top: '100px', left: '100%' }
     }
     const expect = [
@@ -41,6 +42,7 @@ describe('css @keyframes', () => {
       { top: '50px', offset: 0.3 },
       { top: '50px', offset: 0.31 },
       { top: '50px', offset: 0.32 },
+      { top: '55px', offset: 0.512 },
       { top: '100px', left: '100%', offset: 1 }
     ]
     assert.deepEqual(cssKeyframesToArray(input), expect)
@@ -61,11 +63,13 @@ describe('css @keyframes', () => {
     const input = {
       0: { top: 0, left: 0 },
       30: { top: '50px' },
+      52.2: { top: '55px' },
       '100%': { top: '100px', left: '100%' }
     }
     const expect = [
       { top: 0, left: 0, offset: 0 },
       { top: '50px', offset: 0.3 },
+      { top: '55px', offset: 0.522 },
       { top: '100px', left: '100%', offset: 1 }
     ]
     assert.deepEqual(cssKeyframesToArray(input), expect)

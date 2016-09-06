@@ -57,5 +57,26 @@ describe('css @keyframes', () => {
 
     assert.deepEqual(cssKeyframesToArray(input), expect)
   })
+  it('With numeric', () => {
+    const input = {
+      0: { top: 0, left: 0 },
+      30: { top: '50px' },
+      '100%': { top: '100px', left: '100%' }
+    }
+    const expect = [
+      { top: 0, left: 0, offset: 0 },
+      { top: '50px', offset: 0.3 },
+      { top: '100px', left: '100%', offset: 1 }
+    ]
+    assert.deepEqual(cssKeyframesToArray(input), expect)
+  })
+  it('return null when invalid input', () => {
+    const input = {
+      '0%': { top: 0, left: 0 },
+      'red': { top: '100px', left: '100%' },
+      '100%': { top: '100px', left: '100%' }
+    }
+    assert.deepEqual(cssKeyframesToArray(input), null)
 
+  })
 })

@@ -22,7 +22,7 @@ describe('css @keyframes', () => {
     }
     const expect = [
       { top: 0, left: 0, offset: 0 },
-      { top: '50px', offset: 0.3 , easing: 'ease-out'},
+      { top: '50px', offset: 0.3, easing: 'ease-out' },
       { left: '50px', offset: 0.68 },
       { left: '50px', offset: 0.72 },
       { top: '100px', left: '100%', offset: 1 }
@@ -52,7 +52,7 @@ describe('css @keyframes', () => {
     }
     const expect = [
       { marginTop: '50px', offset: 0, easing: 'ease-in' },
-      { marginTop: '100px', offset: 1, easing: 'ease-out'}
+      { marginTop: '100px', offset: 1, easing: 'ease-out' }
     ]
 
     assert.deepEqual(cssKeyframesToArray(input), expect)
@@ -77,6 +77,5 @@ describe('css @keyframes', () => {
       '100%': { top: '100px', left: '100%' }
     }
     assert.deepEqual(cssKeyframesToArray(input), null)
-
   })
 })

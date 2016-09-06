@@ -1,6 +1,6 @@
 const postcss = require('postcss')
 const postcssJs = require('postcss-js')
-const cssKeyframesToArray = require('../src/')
+const cssKeyframesToArray = require('../lib/')
 const assert = require('assert')
 
 describe('with postcss', () => {

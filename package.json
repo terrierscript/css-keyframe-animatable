@@ -1,8 +1,9 @@
 {
   "name": "css-keyframe-animatable",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Convert CSS @keyframes like object to Element.animate compatible array",
+  "main": "lib/index.js",
+  "modules": "src/index.js",
   "scripts": {
     "prebuild": "rimraf lib",
     "prepublish": "npm run build",

@@ -1,5 +1,7 @@
 # css-keyframe-to-array
 
+Convert CSS `@keyframes` like object to `Element.animate` compatible array
+
 ```js
 const cssKeyframesToArray = require('css-keyframe-to-array')
 

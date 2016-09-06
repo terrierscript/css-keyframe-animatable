@@ -5,7 +5,7 @@ const assert = require('assert')
 
 describe('with postcss', () => {
   it('convert raw css string', () => {
-    let css = `
+    const css = `
     @keyframes identifier {
       from { top: 0; left: 0; }
       to { top: 100px; left: 100%; }
